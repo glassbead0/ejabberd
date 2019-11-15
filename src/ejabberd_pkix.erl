@@ -327,6 +327,7 @@ get_certfiles_from_config_options() ->
 	    lists:foldl(
 	      fun(Path, Acc) ->
 		      Files = wildcard(Path),
+          error_logger:info_msg("1111 FILES", [Files]),
 		      lists:foldl(fun sets:add_element/2, Acc, Files)
 	      end, sets:new(), Paths)
     end.
